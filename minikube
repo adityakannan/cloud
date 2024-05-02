@@ -1,11 +1,21 @@
-// in terminal 
-
+// in terminal
 curl.exe -LO "https://dl.k8s.io/release/v1.30.0/bin/windows/amd64/kubectl.exe"  // download kubernetes
 
+
+// in microsoft powershell(run as administrator)
+New-Item -Path 'c:\' -Name 'minikube' -ItemType Directory -Force
+Invoke-WebRequest -OutFile 'c:\minikube\minikube.exe' -Uri 'https://github.com/kubernetes/minikube/releases/latest/download/minikube-windows-amd64.exe' -UseBasicParsing
+
+$oldPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine)
+if ($oldPath.Split(';') -inotcontains 'C:\minikube'){
+  [Environment]::SetEnvironmentVariable('Path', $('{0};C:\minikube' -f $oldPath), [EnvironmentVariableTarget]::Machine)
+}
+
+
+// in terminal
 minikube start
 kubectl cluster-info
 kubectl create deployment nginx-deployment --image=nginx
 kubectl get pods
 kubectl expose deployment nginx-deployment --port=80 --type=NodePort
 kubectl get pods --all-namespaces
-
