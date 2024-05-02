@@ -1,10 +1,10 @@
-// open docker hub and create a new repository with name - demo
+// open docker hub and create a new repository with name - demo1
 
 // in terminal
 docker login
 docker build -t adi:latest .
 docker images
-docker tag (copy the tag number from prev execution - ex:50e5acd5b706) adityakannan20/demo:latest
+docker tag (copy the tag number from prev execution - ex:50e5acd5b706) adityakannan20/demo1:latest
 docker images
-docker push adityakannan20/demo 
-docker pull adityakannan20/demo 
+docker push adityakannan20/demo1
+docker pull adityakannan20/demo1
