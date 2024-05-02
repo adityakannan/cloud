@@ -1,0 +1,11 @@
+// in terminal 
+
+curl.exe -LO "https://dl.k8s.io/release/v1.30.0/bin/windows/amd64/kubectl.exe"  // download kubernetes
+
+minikube start
+kubectl cluster-info
+kubectl create deployment nginx-deployment --image=nginx
+kubectl get pods
+kubectl expose deployment nginx-deployment --port=80 --type=NodePort
+kubectl get pods --all-namespaces
+
