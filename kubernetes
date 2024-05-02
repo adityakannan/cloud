@@ -1,0 +1,6 @@
+// in terminal
+
+kubectl config get-contexts
+kubectl config use-context docker-desktop
+kubectl get nodes
+kubectl get nodes -o wide
