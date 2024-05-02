@@ -10,7 +10,7 @@ COPY index.html /usr/share/nginx/html
      </head>
     <body> 
         <h1>Hi</h1>
-        <img src="elephant img.jpeg">
+        
     </body>
     </html>
     
