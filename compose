@@ -1,38 +1,7 @@
-// create compose yaml file
-
-version: '3' 
-services:
-web:
-image:nginx:latest ports:
-- "8080:80"
-db:
-image:mysql:5.7 environment:
-MYSQL_ROOT_PASSWORD: example
-MYSQL_DATABASE:mydatabase app:
-image:myapp:latest ports:
-- "3000:3000"
-command: "tail -f /dev/null"
-
-// create dockerfile 
-
-FROM python:3.9-slim
-WORKDIR /app
-RUN pip install --no-cache-dir Flask==2.0.2 COPY . .
-CMD ["python", "app.py"]
-
-// create App.py
-
-from http.server import BaseHTTPRequestHandler, HTTPServer 
-class SimpleHTTPRequestHandler(BaseHTTPRequestHandler): 
-    def do_GET(self): 
-        self.send_response(200) 
-        self.send_header('Content-type', 'text/plain') 
-        self.end_headers() 
-        self.wfile.write(b'Hello from my Python HTTP server!') 
-def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, port=3000): 
-    server_address = ('', port) 
-    httpd = server_class(server_address, handler_class) 
-    print(f'Starting server on port {port}...') 
-    httpd.serve_forever() 
-if__name__ ==  '_main_':
-run()
+create 4 files in vs code using docker compose quickstart website
+// docker must be open
+// open terminal 
+pip install redis
+pip Install flask
+docker build -t sample .
+docker compose up
