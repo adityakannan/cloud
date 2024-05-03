@@ -1,7 +1,0 @@
-create 4 files in vs code using docker compose quickstart website
-// docker must be open
-// open terminal 
-pip install redis
-pip Install flask
-docker build -t sample .
-docker compose up
