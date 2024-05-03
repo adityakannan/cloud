@@ -1,8 +1,1 @@
-docker swarm init
-docker service create --name webapp --replicas 3 -p 8080:80 nginx
-docker service scale webapp=5
-docker service update --image nginx:1.19.8 webapp
-docker service ls --filter name=webapp
-docker ps -a
-docker swarm leave --force
-docker system prune -a --volumes
+
