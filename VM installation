@@ -1,7 +1,0 @@
-1 -- Open the virtual box and install Ubuntu OS in it.
-2 -- Power off the VM which you want to add virtual box.
-3 -- Then right click on that VM, select settings.
-4 -- Then click on storage, find controller IDE.
-5 -- In the top right, find add hard disk icon, the pop-up window displays. 
-6 -- On that window, select create new disk and then click next and finish. 
-7 -- the find attributes icon, hard disk as IDE secondary enclave.
